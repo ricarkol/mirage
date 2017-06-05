@@ -1861,7 +1861,7 @@ let link info name target =
         | "mirage-net-solo5" -> "net" :: acc
         | "mirage-block-solo5" -> "blk" :: acc
         | _ -> acc)
-        [] libs
+        [] libs @ ["gdb"]
     in
     pkg_config "solo5-kernel-ukvm" ["--variable=libdir"] >>= function
     | [ libdir ] ->
